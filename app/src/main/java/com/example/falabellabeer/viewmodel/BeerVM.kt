@@ -20,8 +20,6 @@ class BeerVM : BaseVM() {
 
     private lateinit var subscription: Disposable
 
-//    val beerListAdapter: BeerAdapters = BeerAdapters()
-
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val errorMessage:MutableLiveData<Int> = MutableLiveData()
     val errorClickListener = View.OnClickListener { loadBeers() }
@@ -59,8 +57,6 @@ class BeerVM : BaseVM() {
                 { result -> onRetrieveBeerListSuccess(result) },
                 { onRetrieveBeerListError() }
             )
-
-//        beerLiveData = mRepository!!.getMarkets()
     }
 
     private fun onRetrieveBeerListStart(){
@@ -74,7 +70,6 @@ class BeerVM : BaseVM() {
 
     private fun onRetrieveBeerListSuccess(beerList:List<Beer>){
         beerLiveData!!.value = beerList
-//        beerListAdapter.updatePostList(beerList)
     }
 
     private fun onRetrieveBeerListError(){

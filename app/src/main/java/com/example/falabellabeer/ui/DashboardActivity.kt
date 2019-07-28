@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.lifecycle.Observer
@@ -40,6 +41,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         initialiseControls()
 
@@ -60,8 +62,6 @@ class DashboardActivity : AppCompatActivity() {
 
         setAdapter()
 
-        edtSearch.clearFocus()
-        hideKeyBoard()
         edtSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
@@ -75,6 +75,12 @@ class DashboardActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        edtSearch.clearFocus()
+        hideKeyBoard()
+    }
     fun onSort(view: View) {
         adapter.refresh(beerVM!!.sort(sort_ascending))
         sort_ascending = !sort_ascending
