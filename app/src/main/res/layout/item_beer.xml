@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvBeer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/m_2"
+        android:elevation="@dimen/m_5">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/m_10">
+
+        <ImageView
+                android:layout_width="@dimen/m_40"
+                android:layout_height="@dimen/m_40"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/m_10"
+                android:id="@+id/ivBeerMug"
+                android:src="@drawable/ic_beer_mug"/>
+
+        <LinearLayout
+                android:id="@+id/llBeerPub"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@+id/ivBeerMug"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tvBeerStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="20"
+                    android:text="Style"
+                    android:textSize="@dimen/t_16"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/tvAlcoholName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/m_5"
+                    android:maxLength="20"
+                    android:hint="Select"
+                    android:textSize="@dimen/t_14"
+                    android:textStyle="italic"/>
+        </LinearLayout>
+
+
+        <TextView
+                android:id="@+id/tvAlcoholContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llBeerPub"
+                android:layout_toRightOf="@+id/ivBeerMug"
+                android:hint="Select"
+                android:textSize="@dimen/t_14"
+                android:textStyle="italic"/>
+
+        <ImageView
+                android:layout_width="@dimen/m_30"
+                android:layout_height="@dimen/m_30"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/m_10"
+                android:layout_alignParentRight="true"
+                android:id="@+id/ivAddToCart"
+                android:src="@drawable/ic_addtocart"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
