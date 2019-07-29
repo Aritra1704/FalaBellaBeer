@@ -22,6 +22,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 
+//https://proandroiddev.com/mvvm-with-kotlin-android-architecture-components-dagger-2-retrofit-and-rxandroid-1a4ebb38c699
+
 class DashboardActivity : AppCompatActivity() {
 
     private var beerVM: BeerVM? = null
